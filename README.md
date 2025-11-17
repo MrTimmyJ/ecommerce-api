@@ -48,6 +48,14 @@ It served as a capstone for group collaboration, sprint development, and full-st
 
     ➕ Add/update/delete produce via REST API
 
+🚀 DevOps & Infrastructure
+
+    🔧 CI/CD Pipeline: Jenkins automated testing and deployment
+
+    🔄 Zero-Downtime Deploys: Systemd service management
+
+    📦 Production Builds: Optimized Go binaries
+
 💻 Tech Stack
 
 | Layer         | Technology                 |
@@ -58,6 +66,7 @@ It served as a capstone for group collaboration, sprint development, and full-st
 | UI Framework  | Bootstrap                  |
 | Auth          | Session-based auth         |
 | Visualization | Chart.js (Admin Dashboard) |
+| DevOps        | Jenkins                    |
 
 🧩 Architecture
 
