@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Professional Sign-in page using Bootstrap 5.3">
+  <title>Sign In - Bootstrap 5</title>
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for the page -->
+  <style>
+    html, body {
+      height: 100%;
+      background-color: #ffffff; /* White background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+
+    .form-signin {
+      max-width: 400px;
+      width: 100%;
+      padding: 2rem;
+      background: #ffffff; /* White background for the form */
+      border-radius: 12px;
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Light shadow */
+    }
+
+    .form-signin .form-floating:focus-within {
+      z-index: 2;
+    }
+
+    .form-signin input[type="email"],
+    .form-signin input[type="password"] {
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      padding: 10px;
+    }
+
+    .form-signin .form-check-label {
+      font-size: 0.9rem;
+    }
+
+    .form-signin button {
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-signin button:hover {
+      background-color: #0056b3;
+    }
+
+    .form-signin .text-body-secondary {
+      font-size: 0.9rem;
+      color: #6c757d;
+    }
+
+    .form-signin .form-floating label {
+      font-size: 1rem;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 576px) {
+      .form-signin {
+        width: 90%;
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="form-signin">
+    <form>
+      <!-- Logo or Branding (Optional) -->
+      <!-- <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Bootstrap Logo" width="72" height="57" class="mb-4 mx-auto d-block"> -->
+
+      <!-- Heading -->
+      <h1 class="h3 mb-3 fw-normal text-center">Sign In</h1>
+
+      <!-- Email Input -->
+      <div class="form-floating">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Email address</label>
+      </div>
+
+      <!-- Password Input -->
+      <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" onkeypress="login(event)">
+        <label for="floatingPassword">Password</label>
+      </div>
+
+      <!-- Remember Me Checkbox -->
+      <div class="form-check text-start my-3">
+        <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          Remember me
+        </label>
+      </div>
+
+      <!-- Submit Button -->
+      <a href="#" onClick="login(event)" class="btn btn-primary w-100 py-2" type="submit">Sign in</a>
+
+      <!-- Footer text -->
+      <p class="mt-5 mb-3 text-body-secondary text-center">&copy; 2024 Watercress and Weiss</p>
+    </form>
+  </main>
+
+  <!-- Bootstrap 5.3 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function login(e) {
+      if (e.target.tagName == "INPUT" && e.keyCode != 13) {
+        return;
+      }
+      e.preventDefault();
+      const email = document.getElementById('floatingInput').value;
+      const password = document.getElementById('floatingPassword').value;
+      const payload = {
+        email: email,
+        password: password
+      }
+      fetch('https://www.tesc.farm/api/user/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then(response => {
+        if (!response.ok) {
+            alert("Access Denied");
+            throw new Error("Access Denied");
+        } else {
+            location.href = "dashboard.html";
+        }
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <script src="https://kit.fontawesome.com/bb1edf6c5f.js" crossorigin="anonymous"></script>
+    <title>Contact Us</title>
+    <link id="favicon" rel="icon" type="image/x-icon" href="static/favicon.png">
+</head>
+<body>
+    <!-- Skip to Main Content Link -->
+    <a href="#main-content" class="skip-link">Skip to Main Content</a>
+
+    <header>
+        <nav class="topnav">
+            <!-- Logo Image -->
+            <a href="index.html" class="logo">
+                <img src="static/img/transparentlogo.png" alt="Watercress and Weiss Logo">
+            </a>
+
+            <!-- Navigation Links -->
+            <div class="nav-links">
+                <li><a href="produce.html">Produce</a></li>
+                <li><a href="about.html">About</a></li>
+                <li>
+                    <a href="cart.html" class="cart-link">
+                        <span class="cart_lan"><i class="fa-solid fa-cart-shopping"></i> Cart</span>
+                    </a>
+                </li>
+            </div>
+        </nav>
+        <hr style="color: #81cc97">
+    </header>
+
+    <!-- Main Content Section -->
+    <main id="main-content">
+        <div class="contactcontain">
+            <form action="action_page.php" class="contact-form">
+                <h2>Contact Us</h2>
+                <p>We’re here to help! Please fill out the form below, and we’ll get back to you shortly.</p>
+
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="Your first name..." required>
+
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lastname" placeholder="Your last name..." required>
+
+                <label for="order">Order Number</label>
+                <input type="text" id="order" name="ordernumber" placeholder="Your order number (optional)">
+
+                <label for="subject">Message</label>
+                <textarea id="subject" name="subject" placeholder="Write your message here..." required></textarea>
+
+                <input type="submit" value="Submit">
+            </form>
+
+            <div class="contactimage">
+                <img src="static/img/happyfarmer.jpg" alt="Happy farmer holding produce">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footerbox">
+            <a href="signin.html" class="bottom">Employees</a>
+            <h3>Watercress and Weiss</h3>
+            <a href="contact.html" class="bottom">Contact Us</a>
+        </div>
+    </footer>
+</body>
+</html>

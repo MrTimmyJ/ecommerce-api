@@ -1,0 +1,56 @@
+pipeline {
+    agent any
+    
+    environment {
+        PROJECT_DIR = '/srv/ecommerce-api'
+        SERVICE_NAME = 'ecommerce-api'
+    }
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                url: 'https://github.com/MrTimmyJ/ecommerce-api.git'
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                sh '''
+                    cd api
+                    go mod download
+                    go build -o api
+                '''
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                sh '''
+                    cd api
+                    go test ./... -v
+                '''
+            }
+        }
+        
+        stage('Deploy') {
+            steps {
+                sh '''
+                    sudo systemctl stop ${SERVICE_NAME} || true
+                    sudo cp ${PROJECT_DIR}/api/api /usr/local/bin/
+                    sudo systemctl daemon-reload
+                    sudo systemctl start ${SERVICE_NAME}
+                '''
+            }
+        }
+    }
+    
+    post {
+        success {
+            echo '✅ Ecommerce API deployed successfully!'
+        }
+        failure {
+            echo '❌ Deployment failed!'
+        }
+    }
+}

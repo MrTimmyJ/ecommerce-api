@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <script src="https://kit.fontawesome.com/bb1edf6c5f.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Cart</title>
+    <link id="favicon" rel="icon" type="image/x-icon" href="static/favicon.png">
+</head>
+<body>
+    <!-- Skip to Main Content Link -->
+    <a href="#main-content" class="skip-link">Skip to Main Content</a>
+
+    <header>
+        <nav class="topnav">
+            <!-- Logo Image -->
+            <a href="index.html" class="logo">
+                <img src="static/img/transparentlogo.png" alt="Watercress and Weiss Logo">
+            </a>
+            <!--<span class="cart_lan"><i class="fa-solid fa-cart-shopping" id="cartHeaderIcon"></i></span>-getting rid of tiny shoppingcart-->
+            <!-- Navigation Links -->
+            <div class="nav-links">
+                <li><a href="produce.html">Produce</a></li>
+                <li><a href="about.html">About</a></li>
+                <li>
+                    <a href="cart.html" class="cart-link">
+                        <span class="cart_lan"><i class="fa-solid fa-cart-shopping"></i> Cart</span>
+                    </a>
+                </li>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main id="main-content">
+        <hr style="color: #81cc97">
+	
+        <section id="cart-container" class="container">
+	    <div class="col-12">
+		<h2>Checkout</h2>
+	    </div>
+
+            <div class="col-6">
+                <form id="checkout-form" method="POST" action="api/orders/new">
+                    <div>
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="address1">Address:</label>
+                        <input type="text" id="address1" name="address1" required>
+                    </div>
+                    <div>
+                        <label for="address2">Address 2 (optional):</label>
+                        <input type="text" id="address2" name="address2" required>
+                    </div>
+                    <div>
+                        <label for="city">City:</label>
+                        <input type="text" id="city" name="city" required>
+                    </div>
+                    <div>
+                        <label for="state">State:</label>
+                        <input type="text" id="state" name="state" required>
+                    </div>
+                    <div>
+                        <label for="zip">ZIP Code:</label>
+                        <input type="text" id="zip" name="zip" required>
+                    </div>
+                </form>
+            </div>
+
+	    <div class="col-6">
+                <h2>Your Cart Items</h2>
+                <ul id="cart-items"></ul>
+                <div id="cart-summary">
+                    <p>Items in Cart: <span id="cart-count">0</span></p>
+                    <p>Total: $<span id="cart-total">0.00</span></p>
+                </div>
+                <button onclick="checkout()">Checkout</button>
+            </div>
+        </section>
+
+    </main>
+  <footer>
+    <div class="footerbox">
+      <a href="signin.html" class="bottom">Employees</a>
+        <h3>Watercress and Weiss</h3>
+      <a href="contact.html" class="bottom">Contact Us</a>
+    </div>
+  </footer>
+  <script src="static/script.js"></script>
+</body>
+</html>

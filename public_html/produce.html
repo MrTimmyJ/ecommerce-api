@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <script src="https://kit.fontawesome.com/bb1edf6c5f.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Produce</title>
+    <link id="favicon" rel="icon" type="image/x-icon" href="static/favicon.png">
+</head>
+<body align = "center">
+    <!-- Skip to Main Content Link -->
+    <a href="#main-content" class="skip-link">Skip to Main Content</a>
+<header>
+    <nav class="topnav">
+        <!-- Logo Image -->
+        <a href="index.html" class="logo">
+            <img src="static/img/transparentlogo.png" alt="Watercress and Weiss Logo">
+        </a>
+
+        <!-- Navigation Links -->
+        <div class="nav-links">
+            <!--Search Bar-->
+            <div class="search-bar"> 
+                <input type="search" class="search-input" placeholder="Search here..." tabindex="0" onkeypress="search(event)">
+                <button class="search-submit" tabindex="0" onClick="search()">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+            <li><a href="produce.html">Produce</a></li>
+            <li><a href="about.html">About</a></li>
+            <li>
+                <a href="cart.html" class="cart-link">
+                    <span class="cart_lan"><i class="fa-solid fa-cart-shopping"></i> Cart</span>
+                </a>
+            </li>
+        </div>
+        <div class="mobile-search-bar">
+            <input type="text" class="search-input" placeholder="Search here..." tabindex="0" onkeypress="search(event)">
+            <button class="search-submit" tabindex="0" onClick="search(event)">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+    </nav>
+</header>
+<main id="main-content">
+    <hr style="color: #81cc97">
+    <div class="sznspot">
+        <h1>
+            Seasonal Produce
+        </h1>
+    </div>
+
+    <!-- Product Grid Section -->
+    <div class="loader"></div>
+    <div class="product-grid hidden">
+    <!--
+        <div class="product-card">
+            <img src="static/img/products/grapes.png" alt="Grapes" />
+            <div class="product-details">
+                <h3 class="product-name">Grapes</h3
+                <h3 class="product-unit">per bunch</h3>
+            </div>
+            <div class="product-card-checkout">
+                <p class="price">$19.99</p>
+                <button class="add-to-cart-button" aria-label="Pre-order Product 1">Add to Cart</button>
+            </div>
+        </div>
+    -->
+
+    </div>
+    <hr style="color: #81cc97">
+  </main>
+  <footer>
+    <div class="footerbox">
+        <a href="signin.html" class="bottom">Employees</a>
+            <h3>Watercress and Weiss</h3>
+        <a href="contact.html" class="bottom">Contact Us</a>
+    </div>
+  </footer>
+  <script src="static/script.js"></script>
+</body>
+</html>
