@@ -2,7 +2,7 @@
 E-commerce project for The Evergreen State College 2024 DSA Group Project. Used to practice sprints and standup for development.
 
 Author: Team of 8 - Timothy Johnson(Full-Stack) <br>
-Date: October 2024 to December 2024
+Date: October 2024 to December 2024 / November 2025
 
 ### 🔗 Live Demo
 
